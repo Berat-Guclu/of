@@ -81,8 +81,8 @@ function gethavale($idarray,$conn)
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                @   $havaleinfo[$id][0] +=  floatval($row['tutar']);
-                @  $havaleinfo[$id][1] .= $row['odendi'];
+                @$havaleinfo[$id][0] +=  floatval($row['tutar']);
+                @$havaleinfo[$id][1] .= $row['odendi'];
             }
         }else{
             $havaleinfo[$id][0] = 0;
