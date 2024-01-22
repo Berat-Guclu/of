@@ -23,8 +23,6 @@ function odenenler($mysqli)
 
             $odenenler_data[$row['rezno']][0] =  $row['rezno'];
             $odenenler_data[$row['rezno']][1] =  floatval($row['tutar']);
-
-
         }
     }
 
@@ -35,8 +33,8 @@ function odenenler($mysqli)
 
 function getcc($idstring,$conn)
 {
-
     $ccinfo = array();
+    
     $sql = "SELECT rezervasyon_no,tutar,odeme FROM poslar WHERE rezervasyon_no IN ($idstring) ";
     $result = $conn->query($sql);
 
@@ -46,8 +44,6 @@ function getcc($idstring,$conn)
             @$ccinfo[$row['rezervasyon_no']][1] .= $row['odeme'];
         }
     }
-
-
     return $ccinfo;
 }
 function preparestring($data)
@@ -109,7 +105,6 @@ function mergedata($ccdata,$havaledata,$idarray,$odemedata)
 
         $finaldata[$id][2] = $odemedata[$id][1];
     }
-
     return $finaldata;
 }
 
@@ -118,10 +113,7 @@ function odemedegerlendir($odenen,$tahsilat)
     global $ustlımıt;
     global $altlımıt;
 
-
-
     return $tahsilat<=($ustlımıt*$odenen) && $tahsilat>=($altlımıt*$odenen);
-
 }
 function printres($id,$odenen,$tahsilat,$odendi,$err)
 {
