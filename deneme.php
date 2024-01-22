@@ -71,11 +71,11 @@ function preparestring($data)
     return    $stringdata ;
 }
 
-function gethavale($idarray,$conn)
+function gethavale($reznoarray,$conn)
 {
     $havaleinfo = array();
 
-    foreach ($idarray as $id){
+    foreach ($reznoarray as $rezno){
         $sql = "SELECT tutar, odendi FROM kasa WHERE aciklama LIKE '%$id%';";
         $result = $conn->query($sql);
 
