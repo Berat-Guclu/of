@@ -2,8 +2,12 @@
 
 $mysqli = new mysqli('localhost:3306', 'deneme', '12131213', 'of');
 
-$ustlımıt=1.2;
-$altlımıt=1;
+define('USTLIMIT',1.2);
+define('ALTLIMIT',1);
+
+
+
+
 
 
 
@@ -113,7 +117,7 @@ function odemedegerlendir($odenen,$tahsilat)
     global $ustlımıt;
     global $altlımıt;
 
-    return $tahsilat<=($ustlımıt*$odenen) && $tahsilat>=($altlımıt*$odenen);
+    return $tahsilat<=(USTLIMIT*$odenen) && $tahsilat>=(ALTLIMIT*$odenen);
 }
 function printres($id,$odenen,$tahsilat,$odendi,$err)
 {
