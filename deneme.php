@@ -132,7 +132,6 @@ function printres($id,$odenen,$tahsilat,$odendi,$err)
     <td>$odendi</td>
     <td>$err</td>
       </tr><br>\n";
-
 }
 function odemekontrol($durumlar)
 {
@@ -140,11 +139,9 @@ function odemekontrol($durumlar)
         return true;
     }
     return false;
-
 }
 function process($data)
 {
-
     foreach ($data as $odeme){
         $errmsg = "";
         if (!odemedegerlendir($odeme[2],$odeme[0])){
@@ -161,14 +158,7 @@ function process($data)
             printres($odeme[3],$odeme[2],$odeme[0],$odeme[1],$errmsg);
 
         }
-
-
-
-
-
     }
-
-
 }
 
 $odenenler_data=odenenler($mysqli);
